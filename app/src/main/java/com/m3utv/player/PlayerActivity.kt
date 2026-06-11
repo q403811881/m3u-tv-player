@@ -8,6 +8,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.media3.common.MediaItem
+import androidx.media3.common.PlaybackException
 import androidx.media3.common.Player
 import androidx.media3.exoplayer.ExoPlayer
 import com.m3utv.player.databinding.ActivityPlayerBinding
@@ -66,7 +67,7 @@ class PlayerActivity : AppCompatActivity() {
                         }
                     }
 
-                    override fun onPlayerError(error: Exception) {
+                    override fun onPlayerError(error: PlaybackException) {
                         binding.tvBuffering.visibility = View.GONE
                         binding.tvError.visibility = View.VISIBLE
                         binding.tvError.text = "播放出错: ${error.localizedMessage ?: "未知错误"}"
