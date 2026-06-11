@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1a1a2e"
+    android:orientation="vertical"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#16213e"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:text="M3U Live TV"
+            android:textColor="#8899aa"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <!-- URL Input Bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="#0f3460"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="8dp">
+
+        <EditText
+            android:id="@+id/etUrlInput"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bg_input"
+            android:drawableStart="@drawable/ic_link"
+            android:drawablePadding="8dp"
+            android:hint="输入 M3U 地址（http:// 或本地路径）"
+            android:imeOptions="actionGo"
+            android:inputType="textUri"
+            android:paddingHorizontal="12dp"
+            android:textColor="#ffffff"
+            android:textColorHint="#667788"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/btnLoad"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/bg_button"
+            android:minWidth="80dp"
+            android:paddingHorizontal="16dp"
+            android:text="加载"
+            android:textAllCaps="false"
+            android:textColor="#ffffff"
+            android:textSize="14sp"
+            android:focusable="true" />
+
+    </LinearLayout>
+
+    <!-- Progress -->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:visibility="gone"
+        style="?android:attr/progressBarStyleSmall" />
+
+    <!-- Empty state -->
+    <TextView
+        android:id="@+id/tvEmptyState"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:paddingHorizontal="32dp"
+        android:text="输入 M3U 地址后点击「加载」\n支持 http/https 远程地址或本地文件路径"
+        android:textColor="#667788"
+        android:textSize="16sp"
+        android:visibility="visible" />
+
+    <!-- Channel List -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvChannelList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:padding="8dp"
+        android:visibility="gone"
+        android:descendantFocusability="afterDescendants"
+        tools:listitem="@layout/item_channel" />
+
+</LinearLayout>

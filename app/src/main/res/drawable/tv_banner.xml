@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="320dp"
+    android:height="180dp"
+    android:viewportWidth="320"
+    android:viewportHeight="180">
+    <!-- Background -->
+    <path
+        android:fillColor="#1a1a2e"
+        android:pathData="M0,0H320V180H0Z" />
+    <!-- Play button icon -->
+    <path
+        android:fillColor="#e94560"
+        android:pathData="M160,90m-60,0a60,60 0,1 1,120 0a60,60 0,1 1,-120 0" />
+    <path
+        android:fillColor="#ffffff"
+        android:pathData="M145,65L145,115L185,90Z" />
+    <!-- Text -->
+    <path
+        android:fillColor="#ffffff"
+        android:pathData="M120,145L200,145L200,155L120,155Z" />
+</vector>
